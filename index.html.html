@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://public-frontend-cos.metadl.com/mgx/img/favicon.png" type="image/png">
+    <title>Manualidades de Pascua - Creatividad y Alegría</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Redes Sociales Flotantes -->
+    <div class="social-sidebar">
+        <a href="https://www.instagram.com" target="_blank" class="social-icon instagram" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com" target="_blank" class="social-icon facebook" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://wa.me/56938934201" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.tiktok.com" target="_blank" class="social-icon tiktok" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+        </a>
+    </div>
+
+    <!-- Carrito de Compras Flotante -->
+    <div class="cart-icon" onclick="toggleCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🐰 Semana Santa 2026 🥚</div>
+            <h1 class="hero-title">Manualidades de Pascua</h1>
+            <p class="hero-subtitle">Creatividad y alegría para esta temporada</p>
+            <div class="hero-divider"></div>
+            <p class="hero-description">Descubre nuestra colección de artículos de manualidades para celebrar la Pascua con toda la familia</p>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-eggs">
+            <span class="floating-egg egg-1">🥚</span>
+            <span class="floating-egg egg-2">🐣</span>
+            <span class="floating-egg egg-3">🌸</span>
+            <span class="floating-egg egg-4">🐰</span>
+            <span class="floating-egg egg-5">🌷</span>
+        </div>
+    </section>
+
+    <!-- Productos Section -->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">Nuestra Colección de Pascua</h2>
+            <p class="section-subtitle">Todo lo que necesitas para crear momentos mágicos esta Semana Santa</p>
+            <div class="products-grid">
+
+                <!-- Producto 1 -->
+                <div class="product-card" data-product-id="egg-painting-kit">
+                    <div class="product-badge">⭐ Popular</div>
+                    <div class="product-image-wrapper">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/620822/2026-03-08/a45acb52-55a1-4bb9-8725-75f866bca89a.png" alt="Kit de Pintura de Huevos de Pascua" class="product-image">
+                        <div class="product-overlay">
+                            <span class="view-details">Ver Detalles</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kit de Pintura de Huevos</h3>
+                        <p class="product-description">Kit completo con pinturas, pinceles y huevos para decorar en familia</p>
+                        <div class="product-footer">
+                            <span class="product-price">$12.990</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="product-card" data-product-id="easter-basket">
+                    <div class="product-badge">🎀 Nuevo</div>
+                    <div class="product-image-wrapper">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/620822/2026-03-08/c0dad998-07b4-4b1b-b08f-a70c3f77d80d.png" alt="Canasta Decorativa de Pascua" class="product-image">
+                        <div class="product-overlay">
+                            <span class="view-details">Ver Detalles</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Canasta Decorativa de Pascua</h3>
+                        <p class="product-description">Hermosa canasta artesanal con cintas, flores y huevos decorativos</p>
+                        <div class="product-footer">
+                            <span class="product-price">$18.990</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="product-card" data-product-id="easter-garland">
+                    <div class="product-image-wrapper">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/620822/2026-03-08/a8329fa6-9912-4f28-98cd-5c469ea24703.png" alt="Guirnalda de Flores y Conejos" class="product-image">
+                        <div class="product-overlay">
+                            <span class="view-details">Ver Detalles</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Guirnalda de Flores y Conejos</h3>
+                        <p class="product-description">Guirnalda decorativa con flores de papel, conejos y huevos colgantes</p>
+                        <div class="product-footer">
+                            <span class="product-price">$9.990</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="product-card" data-product-id="bunny-figurines">
+                    <div class="product-badge">🐰 Favorito</div>
+                    <div class="product-image-wrapper">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/620822/2026-03-08/d8185266-8e4d-4a34-9d63-e25592eb688f.png" alt="Figuras de Conejos Artesanales" class="product-image">
+                        <div class="product-overlay">
+                            <span class="view-details">Ver Detalles</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Figuras de Conejos Artesanales</h3>
+                        <p class="product-description">Adorables conejos hechos a mano en fieltro y tela con detalles únicos</p>
+                        <div class="product-footer">
+                            <span class="product-price">$14.990</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 5 -->
+                <div class="product-card" data-product-id="flower-arrangement">
+                    <div class="product-image-wrapper">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/620822/2026-03-08/d5390565-7294-4c7f-bd05-b7adc17adb19.png" alt="Arreglo de Flores Artificiales" class="product-image">
+                        <div class="product-overlay">
+                            <span class="view-details">Ver Detalles</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Arreglo de Flores Artificiales</h3>
+                        <p class="product-description">Elegante arreglo primaveral con rosas, tulipanes y decoración de Pascua</p>
+                        <div class="product-footer">
+                            <span class="product-price">$16.990</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 6 -->
+                <div class="product-card" data-product-id="kids-craft-kit">
+                    <div class="product-badge">👧 Niños</div>
+                    <div class="product-image-wrapper">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/620822/2026-03-08/8835097f-69a6-44ef-9c09-9383f1c8ee24.png" alt="Kit de Manualidades Infantil" class="product-image">
+                        <div class="product-overlay">
+                            <span class="view-details">Ver Detalles</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kit de Manualidades Infantil</h3>
+                        <p class="product-description">Kit divertido con stickers, goma eva, brillantina y materiales seguros para niños</p>
+                        <div class="product-footer">
+                            <span class="product-price">$8.990</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Detalles del Producto -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProductModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalProductImage" src="" alt="Producto">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalProductName"></h2>
+                    <p class="modal-price" id="modalProductPrice"></p>
+                    <p class="modal-description" id="modalProductDescription"></p>
+
+                    <div class="modal-specifications">
+                        <h3><i class="fas fa-paint-brush"></i> Detalles del Producto:</h3>
+                        <div class="specs-grid" id="modalSpecs"></div>
+                    </div>
+
+                    <div class="quantity-selector">
+                        <label for="quantity">Cantidad:</label>
+                        <div class="quantity-controls">
+                            <button class="qty-btn" onclick="decreaseQuantity()">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <input type="number" id="quantity" value="1" min="1" max="10" readonly>
+                            <button class="qty-btn" onclick="increaseQuantity()">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button class="btn-add-cart" onclick="addToCartFromModal()">
+                            <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                        </button>
+                        <button class="btn-buy-now" onclick="buyNow()">
+                            <i class="fab fa-whatsapp"></i> Comprar Ahora
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal del Carrito -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2><i class="fas fa-shopping-cart"></i> Carrito de Compras</h2>
+            <div id="cartItems" class="cart-items"></div>
+            <div class="cart-total">
+                <h3>Total: <span id="cartTotal">$0</span></h3>
+            </div>
+            <div class="cart-actions">
+                <button class="btn-checkout" onclick="checkout()">
+                    <i class="fab fa-whatsapp"></i> Enviar Pedido por WhatsApp
+                </button>
+                <button class="btn-clear-cart" onclick="clearCart()">
+                    <i class="fas fa-trash"></i> Vaciar Carrito
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiénes Somos Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Quiénes Somos</h2>
+                    <p class="about-description">
+                        En <strong>Manualidades de Pascua</strong>, nos apasiona la creatividad y la tradición.
+                        Desde hace más de 10 años, seleccionamos los mejores materiales y kits de manualidades
+                        para que cada familia pueda celebrar la Semana Santa con alegría y arte.
+                    </p>
+                    <p class="about-description">
+                        Cada producto es cuidadosamente elegido pensando en la calidad, la seguridad
+                        y la diversión. Creemos que las manualidades unen a las familias y crean
+                        recuerdos inolvidables en esta hermosa temporada.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-paint-brush"></i>
+                            <span>Materiales Premium</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-child"></i>
+                            <span>Seguro para Niños</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-heart"></i>
+                            <span>Hecho con Amor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación Section -->
+    <section class="location-section">
+        <div class="container">
+            <h2 class="section-title">Nuestra Ubicación</h2>
+            <div class="location-content">
+                <div class="location-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Dirección</h3>
+                            <p>Av. Principal 123, Centro Comercial Pascua<br>Santiago, Chile</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>+56 9 3893 4201</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Horario</h3>
+                            <p>Lunes a Viernes: 10:00 - 20:00<br>Sábados: 10:00 - 18:00<br>Domingos: Cerrado</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a7c4c8c9d3c6c4d3c8e7cac6c9d2c6cbcec3c6c3c2d4d7c6d4c4d2c689c4cb">[email&#160;protected]</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="location-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.6267890123456!2d-70.6482!3d-33.4489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDI2JzU2LjAiUyA3MMKwMzgnNTMuNSJX!5e0!3m2!1ses!2scl!4v1234567890123!5m2!1ses!2scl"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Manualidades de Pascua. Todos los derechos reservados.</p>
+            <p>Diseñado con <i class="fas fa-heart"></i> para celebrar la Semana Santa</p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="module" src="./script.js"></script>
+</body>
+
+</html>
