@@ -92,6 +92,9 @@ const productsDatabase = {
     }
 };
 
+// WhatsApp number - UPDATED
+const WHATSAPP_NUMBER = '56966318212';
+
 // Estado del carrito
 let cart = [];
 let currentProduct = null;
@@ -171,7 +174,7 @@ function closeProductModal() {
 function increaseQuantity() {
     const quantityInput = document.getElementById('quantity');
     let quantity = parseInt(quantityInput.value);
-    if (quantity < 10) {
+    if (quantity < 99) {
         quantity++;
         quantityInput.value = quantity;
         currentQuantity = quantity;
@@ -192,7 +195,6 @@ function buyNow() {
     if (!currentProduct) return;
 
     const quantity = parseInt(document.getElementById('quantity').value);
-    const phoneNumber = '56938934201';
 
     let message = '🐰 ¡Hola! Estoy interesado en comprar:\n\n';
     message += `*${currentProduct.name}*\n`;
@@ -208,7 +210,7 @@ function buyNow() {
 
     message += '\n¿Podrían confirmar disponibilidad y método de pago? 🥚';
 
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     closeProductModal();
 }
@@ -284,6 +286,15 @@ function closeCart() {
     document.body.style.overflow = 'auto';
 }
 
+function parsePrice(priceStr) {
+    // Extract the first price number from strings like "$300 unidad y $3.200 por 12 unades"
+    const match = priceStr.match(/\$([0-9.,]+)/);
+    if (match) {
+        return parseFloat(match[1].replace(/\./g, '').replace(',', ''));
+    }
+    return 0;
+}
+
 function renderCart() {
     const cartItemsContainer = document.getElementById('cartItems');
 
@@ -301,7 +312,7 @@ function renderCart() {
 
     let total = 0;
     cartItemsContainer.innerHTML = cart.map((item, index) => {
-        const price = parseFloat(item.price.replace('$', '').replace('.', '').replace(',', ''));
+        const price = parsePrice(item.price);
         const itemTotal = price * item.quantity;
         total += itemTotal;
 
@@ -315,15 +326,15 @@ function renderCart() {
                 </div>
                 <div class="cart-item-controls">
                     <div class="cart-quantity-controls">
-                        <button class="cart-qty-btn" onclick="updateCartQuantity(${index}, -1)">
+                        <button class="cart-qty-btn" data-action="decrease" data-index="${index}">
                             <i class="fas fa-minus"></i>
                         </button>
                         <span class="cart-quantity">${item.quantity}</span>
-                        <button class="cart-qty-btn" onclick="updateCartQuantity(${index}, 1)">
+                        <button class="cart-qty-btn" data-action="increase" data-index="${index}">
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
-                    <button class="cart-item-remove" onclick="removeFromCart(${index})">
+                    <button class="cart-item-remove" data-action="remove" data-index="${index}">
                         <i class="fas fa-trash"></i>
                     </button>
                 </div>
@@ -332,6 +343,31 @@ function renderCart() {
     }).join('');
 
     document.getElementById('cartTotal').textContent = `$${total.toLocaleString('es-CL')}`;
+
+    // Attach event listeners to cart item buttons
+    cartItemsContainer.querySelectorAll('[data-action="decrease"]').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const idx = parseInt(this.getAttribute('data-index'));
+            updateCartQuantity(idx, -1);
+        });
+    });
+
+    cartItemsContainer.querySelectorAll('[data-action="increase"]').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const idx = parseInt(this.getAttribute('data-index'));
+            updateCartQuantity(idx, 1);
+        });
+    });
+
+    cartItemsContainer.querySelectorAll('[data-action="remove"]').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const idx = parseInt(this.getAttribute('data-index'));
+            removeFromCart(idx);
+        });
+    });
 }
 
 function updateCartQuantity(index, change) {
@@ -340,9 +376,9 @@ function updateCartQuantity(index, change) {
 
         if (cart[index].quantity <= 0) {
             removeFromCart(index);
-        } else if (cart[index].quantity > 10) {
-            cart[index].quantity = 10;
-            showNotification('Cantidad máxima: 10 unidades por producto');
+        } else if (cart[index].quantity > 99) {
+            cart[index].quantity = 99;
+            showNotification('Cantidad máxima: 99 unidades por producto');
         }
 
         updateCartCount();
@@ -378,13 +414,12 @@ function checkout() {
         return;
     }
 
-    const phoneNumber = '56938934201';
     let message = '🐰🥚 ¡Hola! Me gustaría hacer el siguiente pedido de Pascua:\n\n';
     message += '━━━━━━━━━━━━━━━━━━━━\n';
 
     let total = 0;
     cart.forEach((item, index) => {
-        const price = parseFloat(item.price.replace('$', '').replace('.', '').replace(',', ''));
+        const price = parsePrice(item.price);
         const itemTotal = price * item.quantity;
         total += itemTotal;
 
@@ -399,14 +434,14 @@ function checkout() {
     message += '¿Podrían confirmar disponibilidad, método de pago y tiempo de entrega?\n\n';
     message += '¡Gracias! 🌸';
 
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 
     showNotification('Pedido enviado a WhatsApp');
 }
 
-// Cerrar modales al hacer clic fuera
-window.onclick = function(event) {
+// Cerrar modales al hacer clic fuera del contenido
+window.addEventListener('click', function(event) {
     const productModal = document.getElementById('productModal');
     const cartModal = document.getElementById('cartModal');
 
@@ -416,7 +451,7 @@ window.onclick = function(event) {
     if (event.target === cartModal) {
         closeCart();
     }
-};
+});
 
 // Cerrar modales con tecla ESC
 document.addEventListener('keydown', function(event) {
@@ -426,53 +461,110 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// Inicializar eventos de productos
+// Inicializar eventos cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
+    // --- Cart icon button ---
+    const cartIconBtn = document.getElementById('cartIconBtn');
+    if (cartIconBtn) {
+        cartIconBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleCart();
+        });
+    }
+
+    // --- Close product modal button ---
+    const closeProductModalBtn = document.getElementById('closeProductModalBtn');
+    if (closeProductModalBtn) {
+        closeProductModalBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            closeProductModal();
+        });
+    }
+
+    // --- Close cart modal button ---
+    const closeCartBtn = document.getElementById('closeCartBtn');
+    if (closeCartBtn) {
+        closeCartBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            closeCart();
+        });
+    }
+
+    // --- Quantity buttons ---
+    const decreaseQtyBtn = document.getElementById('decreaseQtyBtn');
+    if (decreaseQtyBtn) {
+        decreaseQtyBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            decreaseQuantity();
+        });
+    }
+
+    const increaseQtyBtn = document.getElementById('increaseQtyBtn');
+    if (increaseQtyBtn) {
+        increaseQtyBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            increaseQuantity();
+        });
+    }
+
+    // --- Add to cart button ---
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            addToCartFromModal();
+        });
+    }
+
+    // --- Buy now button ---
+    const buyNowBtn = document.getElementById('buyNowBtn');
+    if (buyNowBtn) {
+        buyNowBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            buyNow();
+        });
+    }
+
+    // --- Checkout button ---
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            checkout();
+        });
+    }
+
+    // --- Clear cart button ---
+    const clearCartBtn = document.getElementById('clearCartBtn');
+    if (clearCartBtn) {
+        clearCartBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            clearCart();
+        });
+    }
+
+    // --- Product cards ---
     const productCards = document.querySelectorAll('.product-card');
     productCards.forEach(card => {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function(e) {
+            // Don't open modal if clicking inside modal content
+            if (e.target.closest('.modal')) return;
             const productId = this.getAttribute('data-product-id');
             openProductModal(productId);
         });
-
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(50px)';
     });
 
-    // Intersection Observer para animaciones
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
+    // --- Stop propagation on modal content to prevent closing when clicking inside ---
+    document.querySelectorAll('.modal-content').forEach(content => {
+        content.addEventListener('click', function(e) {
+            e.stopPropagation();
         });
-    }, observerOptions);
+    });
 
+    // Simple fade-in animation for product cards
     productCards.forEach((card, index) => {
-        card.style.transition = `all 0.6s ease ${index * 0.1}s`;
-        observer.observe(card);
-    });
-
-    const infoItems = document.querySelectorAll('.info-item');
-    infoItems.forEach((item, index) => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateX(-50px)';
-        item.style.transition = `all 0.6s ease ${index * 0.15}s`;
-        observer.observe(item);
-    });
-
-    const featureItems = document.querySelectorAll('.feature-item');
-    featureItems.forEach((item, index) => {
-        item.style.opacity = '0';
-        item.style.transform = 'scale(0.8)';
-        item.style.transition = `all 0.6s ease ${index * 0.2}s`;
-        observer.observe(item);
+        card.style.opacity = '1';
+        card.style.transform = 'none';
     });
 
     const heroTitle = document.querySelector('.hero-title');
@@ -499,13 +591,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    window.addEventListener('load', function() {
-        document.body.style.opacity = '0';
-        setTimeout(() => {
-            document.body.style.transition = 'opacity 0.5s ease';
-            document.body.style.opacity = '1';
-        }, 100);
-    });
+    // Ensure body is visible
+    document.body.style.opacity = '1';
 });
 
 console.log('🐰 Manualidades de Pascua - Sistema de carrito inicializado correctamente 🥚');
