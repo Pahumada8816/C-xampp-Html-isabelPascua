@@ -2,29 +2,29 @@
 const productsDatabase = {
     'egg-painting-kit': {
         id: 'egg-painting-kit',
-        name: 'Kit de Pintura de Huevos',
-        price: '$12.990',
-        image: 'https://mgx-backend-cdn.metadl.com/generate/images/620822/2026-03-08/a45acb52-55a1-4bb9-8725-75f866bca89a.png',
-        description: 'Kit completo con pinturas acrílicas de colores pastel, pinceles finos, huevos de plástico para decorar y stencils con diseños de Pascua. Perfecto para crear hermosos huevos decorados en familia.',
+        name: 'Estuche de Conejito',
+        price: '$1.000',
+        image: 'imagenPascua/9.jpeg',
+        description: 'Estuche para guardar huevos de Pascua, disponible en colores verde, celeste claro y oscuro, rosado y fucsia, Capacidad para 8 huevos',
         specs: {
-            contenido: '12 huevos + 8 pinturas + 4 pinceles',
-            material: 'Pinturas acrílicas no tóxicas',
+            contenido: 'sin contenido',
+            material: 'Papel de goma eva de alta calidad',
             edades: 'A partir de 5 años',
-            incluye: 'Stencils de diseños pascuales',
+            incluye: 'Sin contenido',
             colores: 'Rosa, lila, amarillo, verde, azul, blanco',
-            tamaño: 'Caja 30x20x10 cm'
+            tamaño: 'Caja 10x8x10 cm'
         }
     },
     'easter-basket': {
         id: 'easter-basket',
         name: 'Canasta Decorativa de Pascua',
-        price: '$18.990',
-        image: 'https://mgx-backend-cdn.metadl.com/generate/images/620822/2026-03-08/c0dad998-07b4-4b1b-b08f-a70c3f77d80d.png',
-        description: 'Hermosa canasta artesanal tejida a mano con cintas de satén en colores pastel, flores artificiales y huevos decorativos. Ideal como centro de mesa o regalo de Pascua.',
+        price: '$1.000',
+        image: 'imagenPascua/5.jpeg',
+        description: 'Hermosa canasta artesanal hecha a mano con cintas de satén en colores pastel, flores artificiales. Ideal como centro de mesa o regalo de Pascua.',
         specs: {
-            material: 'Mimbre natural tejido a mano',
-            decoración: 'Cintas de satén rosa y lavanda',
-            incluye: '6 huevos decorativos + flores',
+            material: 'Articolos de Decoracion y cartón resistente de muy Buena calidad',
+            decoración: 'Cintas de satén rosa y lavanda Flores decorativa',
+            incluye: 'Relleno de papel',
             dimensiones: '35x25x20 cm',
             peso: '450g',
             uso: 'Centro de mesa o regalo'
@@ -32,62 +32,62 @@ const productsDatabase = {
     },
     'easter-garland': {
         id: 'easter-garland',
-        name: 'Guirnalda de Flores y Conejos',
-        price: '$9.990',
-        image: 'https://mgx-backend-cdn.metadl.com/generate/images/620822/2026-03-08/a8329fa6-9912-4f28-98cd-5c469ea24703.png',
-        description: 'Guirnalda decorativa con flores de papel artesanal, adorables conejos recortados y mini huevos colgantes. Perfecta para decorar paredes, ventanas o mesas.',
+        name: 'Brochetas de Conejitas de Pascua',
+        price: '$300 unidad y $3.200 por 12 unades',
+        image: 'imagenPascua/11.jpeg',
+        description: 'Brochetas con figuras de conejita de Pascua, ideales para colocar dulces y sorpresas para niños.',
         specs: {
-            longitud: '2 metros',
-            material: 'Papel de alta calidad y cartulina',
-            elementos: '8 flores + 5 conejos + 10 huevos',
+            longitud: '15 Cm',
+            material: 'Papel de alta calidad y tela selecionada',
+            elementos: 'Sin contenido',
             colores: 'Rosa, amarillo, púrpura y verde',
-            instalación: 'Con cinta adhesiva o ganchos',
+            instalación: 'Palillo de madera pulida ',
             reutilizable: 'Sí, material resistente'
         }
     },
     'bunny-figurines': {
         id: 'bunny-figurines',
-        name: 'Figuras de Conejos Artesanales',
-        price: '$14.990',
-        image: 'https://mgx-backend-cdn.metadl.com/generate/images/620822/2026-03-08/d8185266-8e4d-4a34-9d63-e25592eb688f.png',
-        description: 'Adorables conejos hechos a mano en fieltro y tela de alta calidad. Cada set incluye 3 conejos de diferentes tamaños con ojos de botón y lazos de cinta.',
+        name: 'Brochetas de Orejas de Conejo',
+        price: '$300 unidad y $3.200 por 12 unades',
+        image: 'imagenPascua/12.jpeg',
+        description: 'Brochetas con orejas de conejo en variedad de colores como verde, azul, café, gris claro y oscuro, y calipso, ideales para colocar dulces y sorpresas para niños.',
         specs: {
-            cantidad: '3 conejos por set',
+            cantidad: '1 conejos por set de 12 brochetas',
             material: 'Fieltro y tela de algodón',
-            tamaños: 'Pequeño (10cm), Mediano (15cm), Grande (20cm)',
-            relleno: 'Algodón hipoalergénico',
+            tamaños: 'Pequeño (10cm), Mediano (15cm)',
+            relleno: 'Sin Relleno',
             detalles: 'Ojos de botón y lazos de cinta',
             hecho: '100% artesanal'
         }
     },
     'flower-arrangement': {
         id: 'flower-arrangement',
-        name: 'Arreglo de Flores Artificiales',
-        price: '$16.990',
-        image: 'https://mgx-backend-cdn.metadl.com/generate/images/620822/2026-03-08/d5390565-7294-4c7f-bd05-b7adc17adb19.png',
-        description: 'Elegante arreglo primaveral en jarrón de cerámica decorativo. Incluye rosas, tulipanes, margaritas y lirios en tonos pastel con pequeños huevos de Pascua y mariposas.',
+        name: 'Relleno para Cajitas de Pascua',
+        price: '$700',
+        image: 'imagenPascua/6.jpeg',
+        description: 'Relleno decorativo para cajitas de Pascua, disponible en variedad de colores. Ideal para complementar regalos y presentaciones.',
         specs: {
-            flores: 'Rosas, tulipanes, margaritas y lirios',
-            jarrón: 'Cerámica decorativa blanca',
-            altura: '40 cm total',
-            colores: 'Rosa, lavanda, amarillo y blanco',
-            extras: 'Mini huevos y mariposas decorativas',
-            mantenimiento: 'Sin agua, limpieza con paño seco'
+            contenido: 'Relleno',
+            material: 'Papel Relleno',
+            seguridad: 'Materiales no tóxicos certificados',
+            edades: 'A partir de 3 años',
+            incluye: 'Sin contenido',
+            proyectos: 'Sin contenido'
         }
     },
     'kids-craft-kit': {
         id: 'kids-craft-kit',
-        name: 'Kit de Manualidades Infantil',
-        price: '$8.990',
-        image: 'https://mgx-backend-cdn.metadl.com/generate/images/620822/2026-03-08/8835097f-69a6-44ef-9c09-9383f1c8ee24.png',
-        description: 'Kit divertido y seguro para niños con goma eva en formas de huevos y conejos, stickers brillantes, brillantina, limpiapipas, pompones y pegamento seguro.',
+        name: 'Brochetas de Conejitos de Pascua',
+        price: '$300 unidad y $3.200 por 12 unades',
+        image: 'imagenPascua/10.jpeg',
+        description: 'Brochetas con figuras de conejito de Pascua, ideales para colocar dulces y sorpresas para niños.',
         specs: {
-            contenido: '+50 piezas de manualidades',
-            material: 'Goma eva, brillantina, pompones',
-            seguridad: 'Materiales no tóxicos certificados',
-            edades: 'A partir de 3 años',
-            incluye: 'Stickers, limpiapipas, ojos móviles',
-            proyectos: 'Guía con 5 proyectos paso a paso'
+            cantidad: '1 conejos por set de 12 brochetas',
+            material: 'Fieltro y tela de algodón',
+            tamaños: 'Pequeño (10cm), Mediano (15cm)',
+            relleno: 'Sin Relleno',
+            detalles: 'Ojos de botón y lazos de cinta',
+            hecho: '100% artesanal'
         }
     }
 };
