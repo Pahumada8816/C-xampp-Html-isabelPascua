@@ -19,7 +19,7 @@
         <a href="https://www.facebook.com" target="_blank" class="social-icon facebook" aria-label="Facebook">
             <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="https://wa.me/56938934201" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp">
+        <a href="https://wa.me/56966318212" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
         <a href="https://www.tiktok.com" target="_blank" class="social-icon tiktok" aria-label="TikTok">
@@ -28,7 +28,7 @@
     </div>
 
     <!-- Carrito de Compras Flotante -->
-    <div class="cart-icon" onclick="toggleCart()">
+    <div class="cart-icon" id="cartIconBtn">
         <i class="fas fa-shopping-cart"></i>
         <span class="cart-count" id="cartCount">0</span>
     </div>
@@ -60,137 +60,138 @@
             <div class="products-grid">
 
                 <!-- Producto 1 -->
-<div class="product-card" data-product-id="egg-painting-kit">
-    <div class="product-badge">⭐ Popular</div>
-    <div class="product-image-wrapper">
-        <img src="imagenPascua/2.jpeg" alt="Estuche de Conejito" class="product-image">
-        <div class="product-overlay">
-            <span class="view-details">Ver Detalles</span>
-        </div>
-    </div>
-    <div class="product-info">
-        <h3 class="product-name">Estuche de Conejo</h3>
-        <p class="product-description">
-            Estuche para guardar huevos de Pascua, disponible en colores verde, celeste claro y oscuro, rosado y fucsia. 
-            Capacidad para 8 huevos.
-        </p>
-        <div class="product-footer">
-            <span class="product-price">$1.000</span>
-        </div>
-        <p class="product-description">
-            Precio conversable por compras sobre 12 unidades.
-        </p>
-    </div>
-</div>
+                <div class="product-card" data-product-id="egg-painting-kit">
+                    <div class="product-badge">⭐ Popular</div>
+                    <div class="product-image-wrapper">
+                        <img src="imagenPascua/2.jpeg" alt="Estuche de Conejito" class="product-image">
+                        <div class="product-overlay">
+                            <span class="view-details">Ver Detalles</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Estuche de Conejo</h3>
+                        <p class="product-description">
+                            Estuche para guardar huevos de Pascua, disponible en colores verde, celeste claro y oscuro, rosado y fucsia. 
+                            Capacidad para 8 huevos.
+                        </p>
+                        <div class="product-footer">
+                            <span class="product-price">$1.000</span>
+                        </div>
+                        <p class="product-description">
+                            Precio conversable por compras sobre 12 unidades.
+                        </p>
+                    </div>
+                </div>
+
                 <!-- Producto 2 -->
-<div class="product-card" data-product-id="easter-basket">
-    <div class="product-badge">🎀 Nuevo</div>
-    <div class="product-image-wrapper">
-        <img src="imagenPascua/5.jpeg" alt="Caja Organizadora de Pascua" class="product-image">
-        <div class="product-overlay">
-            <span class="view-details">Ver Detalles</span>
-        </div>
-    </div>
-    <div class="product-info">
-        <h3 class="product-name">Caja Organizadora de Pascua</h3>
-        <p class="product-description">
-            Caja organizadora para huevos de Pascua, disponible en variedad de colores. 
-            Ideal para guardar huevos de distintos tamaños y dimensiones.
-        </p>
-        <div class="product-footer">
-            <span class="product-price">$1.000</span>
-        </div>
-    </div>
-</div>
+                <div class="product-card" data-product-id="easter-basket">
+                    <div class="product-badge">🎀 Nuevo</div>
+                    <div class="product-image-wrapper">
+                        <img src="imagenPascua/5.jpeg" alt="Caja Organizadora de Pascua" class="product-image">
+                        <div class="product-overlay">
+                            <span class="view-details">Ver Detalles</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Caja Organizadora de Pascua</h3>
+                        <p class="product-description">
+                            Caja organizadora para huevos de Pascua, disponible en variedad de colores. 
+                            Ideal para guardar huevos de distintos tamaños y dimensiones.
+                        </p>
+                        <div class="product-footer">
+                            <span class="product-price">$1.000</span>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Producto 3 -->
-<div class="product-card" data-product-id="easter-garland">
-    <div class="product-image-wrapper">
-        <img src="imagenPascua/4.jpeg" alt="Brochetas de Conejitas de Pascua" class="product-image">
-        <div class="product-overlay">
-            <span class="view-details">Ver Detalles</span>
-        </div>
-    </div>
-    <div class="product-info">
-        <h3 class="product-name">Brochetas de Conejitas de Pascua</h3>
-        <p class="product-description">
-            Brochetas con figuras de conejitas de Pascua, ideales para colocar dulces y sorpresas para niños.
-        </p>
-        <div class="product-footer">
-            <span class="product-price">$300</span>
-        </div>
-        <p class="product-description">
-            Precio por mayor: 12 unidades o más por $3.200.
-        </p>
-    </div>
-</div>
+                <div class="product-card" data-product-id="easter-garland">
+                    <div class="product-image-wrapper">
+                        <img src="imagenPascua/4.jpeg" alt="Brochetas de Conejitas de Pascua" class="product-image">
+                        <div class="product-overlay">
+                            <span class="view-details">Ver Detalles</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Brochetas de Conejitas de Pascua</h3>
+                        <p class="product-description">
+                            Brochetas con figuras de conejitas de Pascua, ideales para colocar dulces y sorpresas para niños.
+                        </p>
+                        <div class="product-footer">
+                            <span class="product-price">$300</span>
+                        </div>
+                        <p class="product-description">
+                            Precio por mayor: 12 unidades o más por $3.200.
+                        </p>
+                    </div>
+                </div>
 
                 <!-- Producto 4 -->
-<div class="product-card" data-product-id="bunny-figurines">
-    <div class="product-badge">🐰 Favorito</div>
-    <div class="product-image-wrapper">
-        <img src="imagenPascua/3.jpeg" alt="Brochetas de Orejas de Conejo" class="product-image">
-        <div class="product-overlay">
-            <span class="view-details">Ver Detalles</span>
-        </div>
-    </div>
-    <div class="product-info">
-        <h3 class="product-name">Brochetas de Orejas de Conejo</h3>
-        <p class="product-description">
-            Brochetas con orejas de conejo en variedad de colores como verde, azul, café, gris claro y oscuro, y calipso, ideales para colocar dulces y sorpresas para niños
-        </p>
-        <div class="product-footer">
-            <span class="product-price">$300</span>
-        </div>
-        <p class="product-description">
-            Precio por mayor: 12 unidades o más por $3.200.
-        </p>
-    </div>
-</div>
+                <div class="product-card" data-product-id="bunny-figurines">
+                    <div class="product-badge">🐰 Favorito</div>
+                    <div class="product-image-wrapper">
+                        <img src="imagenPascua/3.jpeg" alt="Brochetas de Orejas de Conejo" class="product-image">
+                        <div class="product-overlay">
+                            <span class="view-details">Ver Detalles</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Brochetas de Orejas de Conejo</h3>
+                        <p class="product-description">
+                            Brochetas con orejas de conejo en variedad de colores como verde, azul, café, gris claro y oscuro, y calipso, ideales para colocar dulces y sorpresas para niños
+                        </p>
+                        <div class="product-footer">
+                            <span class="product-price">$300</span>
+                        </div>
+                        <p class="product-description">
+                            Precio por mayor: 12 unidades o más por $3.200.
+                        </p>
+                    </div>
+                </div>
 
                 <!-- Producto 5 -->
-<div class="product-card" data-product-id="flower-arrangement">
-    <div class="product-image-wrapper">
-        <img src="imagenPascua/6.jpeg" alt="Relleno para Cajitas de Pascua" class="product-image">
-        <div class="product-overlay">
-            <span class="view-details">Ver Detalles</span>
-        </div>
-    </div>
-    <div class="product-info">
-        <h3 class="product-name">Relleno para Cajitas de Pascua</h3>
-        <p class="product-description">
-            Relleno decorativo para cajitas de Pascua, disponible en variedad de colores. Ideal para complementar regalos y presentaciones.
-        </p>
-        <div class="product-footer">
-            <span class="product-price">$700</span>
-        </div>
-        <p class="product-description">
-            Producto pensado para dar volumen y decoración a las cajitas, ayudando a resaltar dulces y sorpresas. Se vende por unidad.
-        </p>
-    </div>
-</div>
+                <div class="product-card" data-product-id="flower-arrangement">
+                    <div class="product-image-wrapper">
+                        <img src="imagenPascua/6.jpeg" alt="Relleno para Cajitas de Pascua" class="product-image">
+                        <div class="product-overlay">
+                            <span class="view-details">Ver Detalles</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Relleno para Cajitas de Pascua</h3>
+                        <p class="product-description">
+                            Relleno decorativo para cajitas de Pascua, disponible en variedad de colores. Ideal para complementar regalos y presentaciones.
+                        </p>
+                        <div class="product-footer">
+                            <span class="product-price">$700</span>
+                        </div>
+                        <p class="product-description">
+                            Producto pensado para dar volumen y decoración a las cajitas, ayudando a resaltar dulces y sorpresas. Se vende por unidad.
+                        </p>
+                    </div>
+                </div>
 
                 <!-- Producto 6 -->
-<div class="product-card" data-product-id="kids-craft-kit">
-    <div class="product-image-wrapper">
-        <img src="imagenPascua/8.jpeg" alt="Brochetas de Conejitos de Pascua" class="product-image">
-        <div class="product-overlay">
-            <span class="view-details">Ver Detalles</span>
-        </div>
-    </div>
-    <div class="product-info">
-        <h3 class="product-name">Brochetas de Conejitos de Pascua</h3>
-        <p class="product-description">
-            Brochetas con figuras de conejito y conejita de Pascua, ideales para colocar dulces y sorpresas para niños.
-        </p>
-        <div class="product-footer">
-            <span class="product-price">$300</span>
-        </div>
-        <p class="product-description">
-            Precio por mayor: 12 unidades o más por $3.200.
-        </p>
-    </div>
-</div>
+                <div class="product-card" data-product-id="kids-craft-kit">
+                    <div class="product-image-wrapper">
+                        <img src="imagenPascua/8.jpeg" alt="Brochetas de Conejitos de Pascua" class="product-image">
+                        <div class="product-overlay">
+                            <span class="view-details">Ver Detalles</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Brochetas de Conejitos de Pascua</h3>
+                        <p class="product-description">
+                            Brochetas con figuras de conejito y conejita de Pascua, ideales para colocar dulces y sorpresas para niños.
+                        </p>
+                        <div class="product-footer">
+                            <span class="product-price">$300</span>
+                        </div>
+                        <p class="product-description">
+                            Precio por mayor: 12 unidades o más por $3.200.
+                        </p>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -199,7 +200,7 @@
     <!-- Modal de Detalles del Producto -->
     <div id="productModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeProductModal()">&times;</span>
+            <span class="close" id="closeProductModalBtn">&times;</span>
             <div class="modal-body">
                 <div class="modal-image">
                     <img id="modalProductImage" src="" alt="Producto">
@@ -217,21 +218,21 @@
                     <div class="quantity-selector">
                         <label for="quantity">Cantidad:</label>
                         <div class="quantity-controls">
-                            <button class="qty-btn" onclick="decreaseQuantity()">
+                            <button class="qty-btn" id="decreaseQtyBtn">
                                 <i class="fas fa-minus"></i>
                             </button>
-                            <input type="number" id="quantity" value="1" min="1" max="10" readonly>
-                            <button class="qty-btn" onclick="increaseQuantity()">
+                            <input type="number" id="quantity" value="1" min="1" max="99" readonly>
+                            <button class="qty-btn" id="increaseQtyBtn">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
                     </div>
 
                     <div class="modal-actions">
-                        <button class="btn-add-cart" onclick="addToCartFromModal()">
+                        <button class="btn-add-cart" id="addToCartBtn">
                             <i class="fas fa-cart-plus"></i> Agregar al Carrito
                         </button>
-                        <button class="btn-buy-now" onclick="buyNow()">
+                        <button class="btn-buy-now" id="buyNowBtn">
                             <i class="fab fa-whatsapp"></i> Comprar Ahora
                         </button>
                     </div>
@@ -243,17 +244,17 @@
     <!-- Modal del Carrito -->
     <div id="cartModal" class="modal">
         <div class="modal-content cart-modal-content">
-            <span class="close" onclick="closeCart()">&times;</span>
+            <span class="close" id="closeCartBtn">&times;</span>
             <h2><i class="fas fa-shopping-cart"></i> Carrito de Compras</h2>
             <div id="cartItems" class="cart-items"></div>
             <div class="cart-total">
                 <h3>Total: <span id="cartTotal">$0</span></h3>
             </div>
             <div class="cart-actions">
-                <button class="btn-checkout" onclick="checkout()">
+                <button class="btn-checkout" id="checkoutBtn">
                     <i class="fab fa-whatsapp"></i> Enviar Pedido por WhatsApp
                 </button>
-                <button class="btn-clear-cart" onclick="clearCart()">
+                <button class="btn-clear-cart" id="clearCartBtn">
                     <i class="fas fa-trash"></i> Vaciar Carrito
                 </button>
             </div>
@@ -326,7 +327,7 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
-                            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a7c4c8c9d3c6c4d3c8e7cac6c9d2c6cbcec3c6c3c2d4d7c6d4c4d2c689c4cb">[email&#160;protected]</a></p>
+                            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1477667175777d7b7a71677d6775767178547379757d783a777b79">[email&#160;protected]</a></p>
                         </div>
                     </div>
                 </div>
@@ -353,7 +354,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="module" src="./script.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="./script.js"></script>
 </body>
 
 </html>
