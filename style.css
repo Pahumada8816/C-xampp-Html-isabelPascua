@@ -403,6 +403,7 @@ html {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    background-color: #e1bee7;
 }
 
 .product-card:hover .product-image {
@@ -1155,6 +1156,13 @@ html {
     20%, 40% {
         transform: scale(1);
     }
+}
+
+/* Animation Classes */
+.animate-ready.animate-in,
+.animate-ready-scale.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 /* Responsive Design */
